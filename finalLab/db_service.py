@@ -43,7 +43,6 @@ class DbService:
         cursor.execute(sql, (course_name,))
         data = cursor.fetchall()
         if not len(data):
-            print('There is no component named %s' % course_name)  # delete later
             cursor.execute(sql_insert, values)
             db_connection.commit()
         else:
@@ -126,7 +125,6 @@ class DbService:
         cursor.execute(sql, (topic_name,))
         data = cursor.fetchall()
         if not len(data):
-            print('There is no component named %s' % topic_name)  # delete later
             cursor.execute(sql_insert, (topic_name,))
             db_connection.commit()
         else:
